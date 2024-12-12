@@ -15,10 +15,13 @@ function App() {
         <li>SAT</li>
       </ul>
       <ul className="date-list">
+        {[...Array(dayNumber(data))].map((_, i) => (
+          <li key={i}></li>
+        ))}
         {data?.map((v, i) => (
           <DateCard
             key={i}
-            date={v.date}
+            date={v.date.slice(6, 8)}
             todos={v.todos}
             isHoliday={v.isHoliday}
           />
@@ -29,3 +32,11 @@ function App() {
 }
 
 export default App;
+
+function dayNumber(data) {
+  const year = data[0].date.slice(0, 4);
+  const month = data[0].date.slice(4, 6) - 1;
+  const day = data[0].date.slice(6, 8);
+  const date = new Date(year, month, day);
+  return date.getDay();
+}
