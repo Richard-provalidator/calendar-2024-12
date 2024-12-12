@@ -1,0 +1,40 @@
+.app-container {
+  width: 1500px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  margin: 0;
+  color: white;
+  font-size: 48px;
+}
+
+.day-list {
+  margin-top: 40px;
+  padding: 32px 20px;
+  background-color: #f8b229;
+  display: flex;
+  justify-content: space-around;
+
+  gap: 10px;
+}
+
+.day-list li {
+  background-color: white;
+  width: 120px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+
+.date-list {
+  padding: 20px;
+  background-color: #f8b229;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
